@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f454;
+    text-align: center;
 }
 
 header {
@@ -36,9 +37,10 @@ nav a:hover {
 }
 
 section {
-    background-color: #20a1c98a;
+    background-color: #151718ad;
     padding: 20px;
 	min-height: 80vh;
+    color:rgb(100, 185, 152);
 }
 
 footer {
@@ -60,4 +62,7 @@ footer a {
 footer a:hover {
 	color: #61bb8e;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+ul {
+    list-style: none;
 }
