@@ -35,3 +35,5 @@ else if (isAfternoon){
 else if (isEvening) {
     WelcomeDiv.innerHTML = "Good Evening!"
 }
+
+localStorage.setItem("It's a secret to everybody.", "It's dangerous to go alone! Take this." )
