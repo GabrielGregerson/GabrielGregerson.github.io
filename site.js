@@ -79,3 +79,32 @@ document.getElementById('prev').addEventListener('click', () => prevImage());
 setInterval(() => {
     nextImage();
 }, 5000);
+
+// Week 7 project
+
+const todoList = document.querySelector('.todo-list');
+const input = document.getElementById('new-todo');
+const addButton = document.getElementById('add-todo-btn');
+
+let todos = JSON.parse(localStorage.getItem('todo-list')) || [];
+
+const renderTodos = () => {
+    todoList.innerHTML = '';
+    todos.map(todo => {
+        const li = document.createElement('li');
+        li.textContent = todo.text;
+        todoList.append(li);
+    });
+};
+
+addButton.onclick = () => {
+    const newTodo = input.value.trim();
+    if (newTodo) {
+        todos.push({ text: newTodo, completed: false }); 
+        localStorage.setItem('todo-list', JSON.stringify(todos));
+        renderTodos();
+        input.value = '';
+    }
+};
+
+renderTodos();
