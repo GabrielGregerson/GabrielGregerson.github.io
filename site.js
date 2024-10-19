@@ -108,3 +108,31 @@ addButton.onclick = () => {
 };
 
 renderTodos();
+
+// Week 8!
+
+const getRandomPokemon = async () => {
+    const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150)
+
+        const response = await fetch(url);
+        const pokemonObj = await response.json();
+        return pokemonObj;
+    
+};
+
+const renderPokemon = (pokemonObj) => {
+    const parentElement = document.querySelector('.pokemon-container');
+    parentElement.innerHTML = '';
+    
+    const img = document.createElement('img');
+    img.src = pokemonObj.sprites.front_default;
+    img.alt = pokemonObj.name;
+    parentElement.append(img);
+};
+
+getRandomPokemon().then(pokemonObj => {
+    if (pokemonObj) {
+        renderPokemon(pokemonObj);
+    }
+});
+
